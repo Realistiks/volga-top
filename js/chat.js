@@ -23,6 +23,7 @@
     if (open) {
       input.focus();
       log.scrollTop = log.scrollHeight;
+      window.dispatchEvent(new Event('chat-opened'));
     }
   }
 
