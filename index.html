@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Команда Волга.ТОП - портфолио</title>
+<meta name="description" content="Команда хакатона Волга.ТОП: базовая версия сайта-портфолио на HTML, CSS и JavaScript. Капитан в центре, участники по бокам.">
+<meta name="theme-color" content="#0d1117">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Зона Андрея и Никиты: стили и цветовая гамма -->
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+<script defer src="js/main.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1 class="reveal">Команда «Волга.ТОП»<span class="dot">.</span></h1>
+    <div class="subtitle reveal d1">Базовая версия сайта-портфолио на HTML - хакатон ПГУТИ</div>
+    <div class="tags reveal d2">
+      <span class="tag">HTML5</span>
+      <span class="tag">CSS3</span>
+      <span class="tag">JavaScript</span>
+      <span class="tag b">Адаптивность</span>
+      <span class="tag b">ИИ-промпты</span>
+      <span class="tag b">GitHub Pages</span>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a href="#about">О проекте</a>
+    <a href="#team">Команда</a>
+    <a href="#roles">Роли</a>
+    <a href="#ai">ИИ и ответственность</a>
+    <a href="#contacts">Контакты</a>
+  </div>
+</nav>
+
+<!-- Зона Ильнура: разметка. Капитан кидает промты, Ильнур правит HTML -->
+<main>
+
+<section id="about">
+  <div class="wrap">
+    <h2 class="reveal">О проекте</h2>
+    <p class="lead reveal d1">
+      Собрали базовую версию сайта по образцу личного портфолио: тёмная тема, карточки,
+      адаптивная сетка и плавные анимации при прокрутке. Каждый участник отвечает за свою
+      зону, капитан сводит куски в один репозиторий и готовит полный комплект работ.
+    </p>
+    <div class="metrics">
+      <div class="metric reveal d1"><div class="v">5</div><div class="l">участников команды</div></div>
+      <div class="metric reveal d2"><div class="v">4</div><div class="l">рабочие зоны без капитана</div></div>
+      <div class="metric reveal d3"><div class="v">1</div><div class="l">общий репозиторий</div></div>
+      <div class="metric reveal d4"><div class="v">27.11</div><div class="l">дедлайн отборочного этапа</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="wrap">
+    <h2 class="reveal">Команда</h2>
+    <p class="lead reveal d1">
+      Капитан в центре, участники появляются с боков по двое при спуске вниз.
+      Наведите на фотографию, чтобы открыть её на весь экран.
+    </p>
+
+    <div class="team-stage">
+      <div class="team-line" aria-hidden="true"></div>
+
+      <article class="captain-card reveal zoom">
+        <img class="zoomable" src="assets/img/kirill.jpg" alt="Капитан команды Кирилл Колесников" width="1280" height="853" tabindex="0" role="button" aria-label="Увеличить фотографию капитана">
+        <div class="captain-body">
+          <span class="role">Капитан</span>
+          <h3>Кирилл Колесников</h3>
+          <p>Формулирует промты для ИИ, собирает страницу из кусков, ведёт репозиторий и сдаёт полный комплект материалов.</p>
+          <div class="stack">
+            <span class="chip">Промты в ИИ</span>
+            <span class="chip">Интеграция</span>
+            <span class="chip">README</span>
+            <span class="chip">Сдача работ</span>
+          </div>
+        </div>
+      </article>
+
+      <div class="team-pair">
+        <article class="member-card left reveal from-left">
+          <img class="zoomable" src="assets/img/ilnur.jpg" alt="Ильнур Рахматуллин" width="896" height="1200" tabindex="0" role="button" aria-label="Увеличить фотографию Ильнура">
+          <div class="member-text">
+            <span class="post">HTML и разметка</span>
+            <h3>Ильнур Рахматуллин</h3>
+            <p>Правит разметку по промтам капитана, отвечает за структуру страниц и семантику.</p>
+            <div class="stack"><span class="chip">HTML5</span><span class="chip">Семантика</span></div>
+          </div>
+        </article>
+        <div class="pair-core" aria-hidden="true"><span>01 + 02</span></div>
+        <article class="member-card right reveal from-right">
+          <img class="zoomable" src="assets/img/andrey.jpg" alt="Андрей Иванов" width="576" height="621" tabindex="0" role="button" aria-label="Увеличить фотографию Андрея">
+          <div class="member-text">
+            <span class="post">Стили и цвет</span>
+            <h3>Андрей Иванов</h3>
+            <p>Подбирает цветовую гамму, карточки, отступы и состояние элементов при наведении.</p>
+            <div class="stack"><span class="chip">CSS</span><span class="chip">Палитра</span></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="team-pair">
+        <article class="member-card left reveal from-left">
+          <img class="zoomable" src="assets/img/masha.jpg" alt="Мария Федорова" width="853" height="1280" tabindex="0" role="button" aria-label="Увеличить фотографию Марии">
+          <div class="member-text">
+            <span class="post">Видео</span>
+            <h3>Мария Федорова</h3>
+            <p>Записывает видеодемонстрацию сайта и видео-визитку команды для отборочного этапа.</p>
+            <div class="stack"><span class="chip">Демо</span><span class="chip">Визитка</span></div>
+          </div>
+        </article>
+        <div class="pair-core" aria-hidden="true"><span>03 + 04</span></div>
+        <article class="member-card right reveal from-right">
+          <img class="zoomable" src="assets/img/nikita.jpg" alt="Никита Роменский" width="709" height="945" tabindex="0" role="button" aria-label="Увеличить фотографию Никиты">
+          <div class="member-text">
+            <span class="post">Шрифты и дизайн</span>
+            <h3>Никита Роменский</h3>
+            <p>Отвечает за типографику, визуальный ритм и то, чтобы сайт выглядел цельно.</p>
+            <div class="stack"><span class="chip">Типографика</span><span class="chip">Дизайн</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="roles">
+  <div class="wrap">
+    <h2 class="reveal">Как мы работаем</h2>
+    <p class="lead reveal d1">Короткий цикл: промт капитана, правка участника, проверка всей командой.</p>
+    <div class="steps">
+      <div class="step reveal d1"><div class="n">01</div><h3>Промт</h3><p>Капитан формулирует задачу для ИИ и получает заготовку.</p></div>
+      <div class="step reveal d2"><div class="n">02</div><h3>Разметка</h3><p>Ильнур правит HTML и приводит структуру страницы к нужному виду.</p></div>
+      <div class="step reveal d3"><div class="n">03</div><h3>Визуал</h3><p>Андрей задаёт цвета, Никита - шрифты и общий визуальный стиль.</p></div>
+      <div class="step reveal d4"><div class="n">04</div><h3>Видео</h3><p>Маша записывает демонстрацию и визитку команды.</p></div>
+      <div class="step reveal d5"><div class="n">05</div><h3>Сборка</h3><p>Капитан сводит части, проверяет адаптив и выкладывает репозиторий.</p></div>
+      <div class="step reveal d6"><div class="n">06</div><h3>Сдача</h3><p>До 27 ноября отправляем прототип, код, два видео и описание.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="ai">
+  <div class="wrap">
+    <h2 class="reveal">ИИ и ответственность</h2>
+    <p class="lead reveal d1">
+      Использование ИИ раскрыто в соответствии с правилами хакатона: инструменты, цели,
+      созданные элементы и проверка участниками указаны ниже и в README репозитория.
+    </p>
+    <div class="cols">
+      <div class="reveal from-left">
+        <h3 style="font-size:17px; margin-bottom:10px;">Что использовали</h3>
+        <ul class="feat">
+          <li>Инструмент: ИИ-ассистент в чате, промты пишет капитан</li>
+          <li>Цели: поиск идей, заготовки разметки и стилей, тексты разделов</li>
+          <li>Создано с помощью ИИ: каркас HTML, начальные стили, анимации появления, черновики текстов</li>
+          <li>Проверка участниками: Ильнур переписал разметку, Андрей и Никита доработали визуал, капитан свёл части и проверил адаптив</li>
+        </ul>
+      </div>
+      <div class="reveal from-right">
+        <h3 style="font-size:17px; margin-bottom:10px;">Что обязательно помнить</h3>
+        <ul class="feat">
+          <li>Каждый участник понимает и умеет объяснить свою часть кода</li>
+          <li>В репозиторий не попадают пароли, ключи и персональные данные</li>
+          <li>Сторонние материалы и шрифты используются на законных условиях, источники указаны</li>
+          <li>Сам факт раскрытого использования ИИ оценку не снижает</li>
+        </ul>
+      </div>
+    </div>
+    <div class="result blue reveal">
+      <b>Важно:</b> код лежит в российской системе контроля версий, как требует положение хакатона.
+      GitHub Pages используется только как публичное зеркало сайта.
+    </div>
+  </div>
+</section>
+
+<section id="contacts">
+  <div class="wrap">
+    <h2 class="reveal">Контакты и ссылки</h2>
+    <p class="lead reveal d1">Регистрация команды и материалы отборочного этапа.</p>
+    <div class="links reveal d2">
+      <!-- Заменить href на ссылку основного репозитория в российской системе контроля версий -->
+      <a href="#" id="repo-link">Репозиторий команды <span aria-hidden="true">↗</span></a>
+      <a class="secondary" href="https://olymp.psuti.ru/" target="_blank" rel="noopener">Олимпиада ПГУТИ <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    Команда «Волга.ТОП» · ПГУТИ · 2026 · Использование ИИ раскрыто в разделе «ИИ и ответственность»
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фотографии">
+  <img id="lightbox-img" alt="Увеличенная фотография">
+</div>
+
+</body>
+</html>
