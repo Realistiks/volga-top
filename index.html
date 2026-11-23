@@ -12,6 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
 <!-- Зона Андрея и Никиты: стили и цветовая гамма -->
 <link rel="stylesheet" href="css/style.css?v=2">
+<link rel="stylesheet" href="css/extra.css?v=1">
 <script>document.documentElement.classList.add('js');</script>
 <script defer src="js/main.js"></script>
 </head>
@@ -161,9 +162,9 @@
       <div class="reveal from-left">
         <h3 style="font-size:17px; margin-bottom:10px;">Что использовали</h3>
         <ul class="feat">
-          <li>Инструменты: ассистент в OpenCode (модель Hy4 flash Free), промты пишет капитан</li>
-          <li>Цели: поиск идей, заготовки HTML и CSS, тексты разделов, код анимаций, описание решения</li>
-          <li>Созданные или изменённые элементы: каркас `index.html`, стили, скрипт анимаций, карточки команды, черновики текстов</li>
+          <li>Инструменты: ассистент в OpenCode (модель Hy4 flash Free) и локальный мост для чата на сайте, промты пишет капитан</li>
+          <li>Цели: поиск идей, заготовки HTML и CSS, тексты разделов, код анимаций и чата, описание решения</li>
+          <li>Созданные или изменённые элементы: каркас `index.html`, стили, скрипты анимаций, партиклов и чата, мост к агенту, карточки команды, черновики текстов</li>
           <li>Проверка участниками: капитан проверил структуру, адаптив и ссылки; Ильнур, Андрей, Никита и Маша проверяют свои зоны до сдачи</li>
         </ul>
       </div>
@@ -206,6 +207,42 @@
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фотографии">
   <img id="lightbox-img" alt="Увеличенная фотография">
 </div>
+
+<canvas id="particles" aria-hidden="true"></canvas>
+
+<button class="chat-toggle" id="chat-toggle" type="button" aria-expanded="false" aria-controls="chat-panel" aria-label="Открыть чат с командой">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-4-.9L3 21l1.9-4.8A8.4 8.4 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.5 8.5 0 0 1 21 11.5Z"></path>
+    <path d="M8.5 11.5h.01M12.5 11.5h.01M16.5 11.5h.01"></path>
+  </svg>
+</button>
+
+<div class="chat-panel" id="chat-panel" role="dialog" aria-label="Чат с ИИ-агентом команды">
+  <div class="chat-head">
+    <div>
+      <strong>Чат команды 322</strong>
+      <span>ИИ-агент отвечает на вопросы о команде</span>
+    </div>
+    <button class="chat-close" id="chat-close" type="button" aria-label="Закрыть чат">×</button>
+  </div>
+  <div class="chat-log" id="chat-log">
+    <div class="bubble note">Только вопросы о команде, ролях, сайте и хакатоне. Остальное агент не берет.</div>
+  </div>
+  <div class="chat-chips">
+    <button class="chat-chip" type="button">Кто в команде?</button>
+    <button class="chat-chip" type="button">Кто отвечает за HTML?</button>
+    <button class="chat-chip" type="button">Какие сроки?</button>
+    <button class="chat-chip" type="button">Как используется ИИ?</button>
+  </div>
+  <form class="chat-form" id="chat-form">
+    <input id="chat-input" type="text" placeholder="Спросите о команде..." autocomplete="off" maxlength="600">
+    <button type="submit">Отправить</button>
+  </form>
+  <div id="chat-typing">Агент печатает...</div>
+</div>
+
+<script src="js/particles.js?v=1" defer></script>
+<script src="js/chat.js?v=1" defer></script>
 
 </body>
 </html>
