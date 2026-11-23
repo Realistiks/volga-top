@@ -30,6 +30,7 @@
       <span class="tag b">ИИ-промпты</span>
       <span class="tag b">GitHub Pages</span>
     </div>
+    <div class="countdown" id="countdown">Отборочный этап: считаем время до сдачи</div>
   </div>
 </header>
 
@@ -38,6 +39,8 @@
     <a href="#about">О проекте</a>
     <a href="#team">Команда</a>
     <a href="#roles">Роли</a>
+    <a href="#idea">Идея и развитие</a>
+    <a href="#prompt">Промт капитана</a>
     <a href="#ai">ИИ и ответственность</a>
     <a href="#contacts">Контакты</a>
   </div>
@@ -164,7 +167,7 @@
         <ul class="feat">
           <li>Инструменты: ассистент в OpenCode (модель Hy4 flash Free) и локальный мост для чата на сайте, промты пишет капитан</li>
           <li>Цели: поиск идей, заготовки HTML и CSS, тексты разделов, код анимаций и чата, описание решения</li>
-          <li>Созданные или изменённые элементы: каркас `index.html`, стили, скрипты анимаций, партиклов и чата, мост к агенту, карточки команды, черновики текстов</li>
+          <li>Созданные или изменённые элементы: каркас `index.html`, стили, скрипты анимаций, партиклов, чата и конструктора промтов, мост к агенту, обратный отсчёт, карточки команды, черновики текстов</li>
           <li>Проверка участниками: капитан проверил структуру, адаптив и ссылки; Ильнур, Андрей, Никита и Маша проверяют свои зоны до сдачи</li>
         </ul>
       </div>
@@ -181,6 +184,52 @@
     <div class="result blue reveal">
       <b>Важно:</b> код лежит в российской системе контроля версий, как требует положение хакатона.
       GitHub Pages используется только как публичное зеркало сайта.
+    </div>
+  </div>
+</section>
+
+<section id="idea">
+  <div class="wrap">
+    <h2 class="reveal">Идея и развитие</h2>
+    <p class="lead reveal d1">Три качества, которые мы заложили в решение: новый способ показать команду, собственная реализация и понятный путь дальнейшего роста.</p>
+    <div class="steps">
+      <div class="step reveal d1"><div class="n">01</div><h3>Новизна</h3><p>Портфолио не просто показывает состав: при локальном запуске посетитель задаёт вопрос, фильтр отсекает всё не по теме, запрос уходит в текущую сессию ИИ-агента, а ответ возвращается в чат на странице.</p></div>
+      <div class="step reveal d2"><div class="n">02</div><h3>Самостоятельность</h3><p>Архитектуру, разметку, стили, анимации и мост команда собрала сама. ИИ применялся точечно для заготовок и раскрыт в README. Мост написан на стандартной библиотеке Python, без платных сервисов.</p></div>
+      <div class="step reveal d3"><div class="n">03</div><h3>Потенциал развития</h3><p>Мост легко расширить: база знаний команды, мультиязычный чат, подключение Telegram, журнал вопросов и ответов для разбора на защите и публичный API для других команд.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="prompt">
+  <div class="wrap">
+    <h2 class="reveal">Промт капитана</h2>
+    <p class="lead reveal d1">Конструктор заготовки: выберите участника и задачу, получите готовый промт в стиле нашей работы с ИИ. Можно скопировать и использовать как шаблон.</p>
+    <div class="prompt-box reveal d2">
+      <div class="prompt-controls">
+        <label>Участник
+          <select id="prompt-role">
+            <option value="ilnur">Ильнур - HTML и разметка</option>
+            <option value="andrey">Андрей - стили и цвет</option>
+            <option value="nikita">Никита - шрифты и дизайн</option>
+            <option value="masha">Маша - видео</option>
+            <option value="captain">Капитан - интеграция</option>
+          </select>
+        </label>
+        <label>Задача
+          <select id="prompt-task">
+            <option value="build">Собрать новый блок</option>
+            <option value="fix">Исправить недочёт</option>
+            <option value="adapt">Адаптировать под мобильный</option>
+            <option value="review">Проверить и объяснить</option>
+          </select>
+        </label>
+        <button id="prompt-build" type="button">Собрать промт</button>
+      </div>
+      <textarea id="prompt-output" rows="7" readonly placeholder="Нажмите «Собрать промт», здесь появится заготовка"></textarea>
+      <div class="prompt-actions">
+        <span id="prompt-hint">Заготовка создаётся локально в браузере</span>
+        <button id="prompt-copy" type="button">Скопировать</button>
+      </div>
     </div>
   </div>
 </section>
@@ -221,7 +270,7 @@
   <div class="chat-head">
     <div>
       <strong>Чат команды 322</strong>
-      <span>ИИ-агент отвечает на вопросы о команде</span>
+      <span class="chat-status" id="chat-status"><i></i> Проверяем связь с агентом...</span>
     </div>
     <button class="chat-close" id="chat-close" type="button" aria-label="Закрыть чат">×</button>
   </div>
@@ -241,8 +290,9 @@
   <div id="chat-typing">Агент печатает...</div>
 </div>
 
-<script src="js/particles.js?v=1" defer></script>
+<script src="js/particles.js?v=2" defer></script>
 <script src="js/chat.js?v=1" defer></script>
+<script src="js/idea.js?v=1" defer></script>
 
 </body>
 </html>

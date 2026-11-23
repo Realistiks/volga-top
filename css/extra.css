@@ -179,6 +179,102 @@
 }
 .chat-form button:hover { background: rgba(63,185,80,.26); }
 
+/* Обратный отсчёт до сдачи */
+.countdown {
+  margin-top: 18px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted, #8b949e);
+  letter-spacing: .02em;
+}
+
+/* Статус связи в чате */
+.chat-status { display: flex !important; align-items: center; }
+.chat-status i {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #8b949e;
+  box-shadow: 0 0 0 3px rgba(139,148,158,.16);
+}
+.chat-status.active i {
+  background: #3fb950;
+  box-shadow: 0 0 0 3px rgba(63,185,80,.18);
+}
+
+/* Конструктор промта */
+.prompt-box {
+  background: var(--card, #161b22);
+  border: 1px solid var(--border, #30363d);
+  border-radius: 12px;
+  padding: 22px;
+}
+.prompt-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 12px;
+  align-items: end;
+}
+.prompt-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted, #8b949e);
+}
+.prompt-controls select,
+.prompt-box textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 9px;
+  border: 1px solid var(--border, #30363d);
+  background: var(--bg, #0d1117);
+  color: var(--text, #e6edf3);
+  font: inherit;
+  font-size: 13px;
+  outline: none;
+}
+.prompt-controls select:focus,
+.prompt-box textarea:focus { border-color: var(--accent, #3fb950); }
+.prompt-controls button,
+.prompt-actions button {
+  padding: 10px 15px;
+  border-radius: 9px;
+  border: 1px solid rgba(63,185,80,.5);
+  background: rgba(63,185,80,.14);
+  color: var(--accent, #3fb950);
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.prompt-controls button:hover,
+.prompt-actions button:hover { background: rgba(63,185,80,.25); }
+.prompt-box textarea {
+  margin-top: 14px;
+  resize: vertical;
+  min-height: 160px;
+  line-height: 1.6;
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+.prompt-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+#prompt-hint { color: var(--muted, #8b949e); font-size: 12px; }
+
+@media (max-width: 760px) {
+  .prompt-controls { grid-template-columns: 1fr; }
+  .prompt-controls button { width: 100%; }
+}
+
 @media print {
   #particles, .chat-toggle, .chat-panel { display: none !important; }
+  .prompt-controls, .prompt-actions { display: none !important; }
 }

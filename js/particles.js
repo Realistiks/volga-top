@@ -38,7 +38,7 @@
         color: colors[Math.floor(Math.random() * colors.length)]
       });
     }
-    if (dots.length > 180) dots = dots.slice(-180);
+    if (dots.length > 90) dots = dots.slice(-90);
   }
 
   function onMove(x, y) {
@@ -64,6 +64,24 @@
   function frame() {
     ctx.clearRect(0, 0, width, height);
     dots = dots.filter(function (dot) { return dot.life > 0; });
+
+    // Соединяем близкие точки линиями: получается созвездие за курсором
+    for (var i = 0; i < dots.length; i += 1) {
+      for (var j = i + 1; j < dots.length; j += 1) {
+        var dx = dots[i].x - dots[j].x;
+        var dy = dots[i].y - dots[j].y;
+        var dist2 = dx * dx + dy * dy;
+        if (dist2 < 4900) {
+          ctx.globalAlpha = (1 - Math.sqrt(dist2) / 70) * 0.22;
+          ctx.strokeStyle = '#3fb950';
+          ctx.lineWidth = 0.6;
+          ctx.beginPath();
+          ctx.moveTo(dots[i].x, dots[i].y);
+          ctx.lineTo(dots[j].x, dots[j].y);
+          ctx.stroke();
+        }
+      }
+    }
 
     dots.forEach(function (dot) {
       dot.x += dot.vx;

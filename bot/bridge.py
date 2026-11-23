@@ -148,7 +148,13 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         path = urlparse(self.path).path
         if path == "/health":
-            self._json({"ok": True, "session": SESSION_ID})
+            self._json(
+                {
+                    "ok": True,
+                    "session": SESSION_ID,
+                    "active": opencode_available(),
+                }
+            )
             return
         rel = path.lstrip("/") or "index.html"
         target = (SITE_DIR / rel).resolve()
