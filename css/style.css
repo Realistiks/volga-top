@@ -116,7 +116,7 @@ h3 { font-family: var(--font-head); font-weight: 500; }
   color: var(--muted); font-family: var(--font-head); font-size: 12px; font-weight: 600;
 }
 .pair-core::before {
-  content: ""; position: absolute; top: 50%; left: -74px; right: -74px;
+  content: ""; position: absolute; z-index: -1; top: 50%; left: -74px; right: -74px;
   height: 1px; background: var(--border);
 }
 
