@@ -188,6 +188,13 @@
   letter-spacing: .02em;
 }
 
+a.chip {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+a.chip:hover { color: var(--accent, #3fb950); border-color: var(--accent, #3fb950); }
+
 /* Статус связи в чате */
 .chat-status { display: flex !important; align-items: center; }
 .chat-status i {
