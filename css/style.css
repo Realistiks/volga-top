@@ -246,10 +246,6 @@ footer { padding: 44px 0 68px; color: var(--muted); font-size: 14px; }
     grid-template-columns: 1fr; gap: 16px;
     padding-left: 48px; margin-top: 30px;
   }
-  .team-pair::before {
-    content: ""; position: absolute; left: -28px; top: 50%;
-    width: 24px; height: 1px; background: var(--border);
-  }
   .pair-core { display: none; }
   .member-card.left, .member-card.right {
     flex-direction: row; text-align: left; justify-self: stretch;
