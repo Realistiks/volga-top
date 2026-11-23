@@ -225,7 +225,6 @@ footer { padding: 44px 0 68px; color: var(--muted); font-size: 14px; }
 
 @media (max-width: 900px) {
   .team-pair { grid-template-columns: minmax(0,1fr) 84px minmax(0,1fr); }
-  .pair-core::before { left: -52px; right: -52px; }
   .member-card { gap: 10px; padding: 10px; }
   .member-card img { width: 96px; height: 124px; }
   .member-card h3 { font-size: 15px; }
