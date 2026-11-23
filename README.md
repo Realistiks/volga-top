@@ -32,7 +32,8 @@ git push -u origin main
 ```
 
 4. В настройках репозитория включите Pages: Settings - Pages - Source: Deploy from a branch - main / root.
-5. Адрес сайта будет вида `https://<логин>.github.io/volga-top/`.
+5. Готовый адрес сайта: **https://realistiks.github.io/volga-top/**.
+   Публичный репозиторий: https://github.com/Realistiks/volga-top.
 
 Файл `.nojekyll` уже лежит в корне и отключает обработку Jekyll.
 
