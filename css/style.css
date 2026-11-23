@@ -115,10 +115,6 @@ h3 { font-family: var(--font-head); font-weight: 500; }
   background: var(--bg); border: 1px solid var(--border);
   color: var(--muted); font-family: var(--font-head); font-size: 12px; font-weight: 600;
 }
-.pair-core::before {
-  content: ""; position: absolute; z-index: -1; top: 50%; left: -74px; right: -74px;
-  height: 1px; background: var(--border);
-}
 
 .member-card {
   display: flex; align-items: center; gap: 16px;
