@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="css/style.css?v=2">
 <link rel="stylesheet" href="css/extra.css?v=1">
 <script>document.documentElement.classList.add('js');</script>
+<script src="js/config.js"></script>
 <script defer src="js/main.js"></script>
 </head>
 <body>
@@ -167,7 +168,7 @@
         <ul class="feat">
           <li>Инструменты: ассистент в OpenCode (модель Hy4 flash Free) и локальный мост для чата на сайте, промты пишет капитан</li>
           <li>Цели: поиск идей, заготовки HTML и CSS, тексты разделов, код анимаций и чата, описание решения</li>
-          <li>Созданные или изменённые элементы: каркас `index.html`, стили, скрипты анимаций, партиклов, чата и конструктора промтов, мост к агенту, обратный отсчёт, карточки команды, черновики текстов</li>
+          <li>Созданные или изменённые элементы: каркас `index.html`, стили, скрипты анимаций, партиклов, чата, конструктора промтов и базовых ответов, мост и туннель к агенту, обратный отсчёт, карточки команды, черновики текстов</li>
           <li>Проверка участниками: капитан проверил структуру, адаптив и ссылки; Ильнур, Андрей, Никита и Маша проверяют свои зоны до сдачи</li>
         </ul>
       </div>
@@ -275,7 +276,7 @@
     <button class="chat-close" id="chat-close" type="button" aria-label="Закрыть чат">×</button>
   </div>
   <div class="chat-log" id="chat-log">
-    <div class="bubble note">Только вопросы о команде, ролях, сайте и хакатоне. Остальное агент не берет.</div>
+    <div class="bubble note">Базовые вопросы отвечаем сразу. Остальные вопросы о команде, ролях, сайте и хакатоне уходят агенту, если связь включена.</div>
   </div>
   <div class="chat-chips">
     <button class="chat-chip" type="button">Кто в команде?</button>
@@ -291,7 +292,8 @@
 </div>
 
 <script src="js/particles.js?v=2" defer></script>
-<script src="js/chat.js?v=1" defer></script>
+<script src="js/answers.js?v=1" defer></script>
+<script src="js/chat.js?v=2" defer></script>
 <script src="js/idea.js?v=1" defer></script>
 
 </body>

@@ -47,6 +47,14 @@
     input.value = '';
     setTyping(true);
 
+    var basic = window.findBasicAnswer ? window.findBasicAnswer(text) : null;
+    if (basic) {
+      await new Promise(function (resolve) { window.setTimeout(resolve, 350); });
+      setTyping(false);
+      addMessage('bot', basic);
+      return;
+    }
+
     try {
       var response = await fetch(ENDPOINT + '/ask', {
         method: 'POST',

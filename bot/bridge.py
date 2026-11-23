@@ -32,7 +32,8 @@ TOPIC_WORDS = (
     "javascript", "видео", "визитк", "демо", "срок", "дедлайн",
     "ноябр", "декабр", "readme", "ии", "искусственн",
     "портфолио", "репозиторий", "github", "gitverse",
-    "партикл", "чат", "бот",
+    "партикл", "чат", "бот", "архитектур", "технологи", "стек",
+    "фронтенд", "бэкенд", "устройств", "как это работает",
 )
 TOPIC_RE = re.compile(
     r"(?<!\w)(" + "|".join(re.escape(word) for word in TOPIC_WORDS) + r")"
@@ -43,6 +44,45 @@ REFUSAL = (
     "хакатон и сроки. Спросите, например: «Кто отвечает за HTML?»"
 )
 
+# Те же базовые ответы, что и на сайте: отдаются мгновенно, без агента.
+BASIC_ANSWERS = (
+    (("кто в команде", "состав команды", "участники команды"),
+     "В команде 322 пять человек: капитан Кирилл Колесников, Ильнур "
+     "Рахматуллин (HTML и разметка), Андрей Иванов (стили и цвет), "
+     "Мария Федорова (видео), Никита Роменский (шрифты и дизайн)."),
+    (("html", "разметк"),
+     "За HTML и разметку отвечает Ильнур Рахматуллин. Он правит разметку "
+     "по промтам капитана и отвечает за структуру страниц и семантику."),
+    (("срок", "дедлайн", "когда сдача"),
+     "Регистрация: 18-27 ноября 2026. Отборочный этап: 23-27 ноября, приём "
+     "работ до 27 ноября 23:59 МСК. Итоги публикуют до 1 декабря, финал "
+     "пройдёт 9-11 декабря в Самаре."),
+    (("как используется ии", "ии и ответственность", "какой ии"),
+     "ИИ применялся для идей, заготовок HTML и CSS, текстов, кода анимаций "
+     "и чата. Инструменты и проверка участниками раскрыты в README по п. 9.2."),
+    (("капитан",),
+     "Капитан команды 322 - Кирилл Колесников. Он формулирует промты, "
+     "собирает страницу, ведёт репозиторий и сдаёт материалы."),
+    (("репозиторий", "github", "gitverse", "где код"),
+     "Основной код должен лежать в российской системе контроля версий, "
+     "например GitVerse. GitHub Pages используется только как зеркало: "
+     "https://github.com/Realistiks/volga-top."),
+    (("что за чат", "как работает чат", "чат с агентом"),
+     "Базовые вопросы чат отвечает сразу без сервера. Остальные уходят через "
+     "мост в сессию OpenCode. Если связь выключена, чат пишет: "
+     "«Удалённый чат неактивен»."),
+    (("сколько баллов", "критерии", "оценка", "жюри"),
+     "Финальное решение оценивается по 40 баллам: презентация, техническая "
+     "реализация, оригинальность, архитектура и интерфейс - по 10 баллов за критерий."),
+    (("приз", "номинац"),
+     "Призовой фонд - 300 000 рублей: три приза по 100 000 рублей в "
+     "номинациях «Искусственный интеллект», «Архитектура ПО» и "
+     "«Фронтенд и UX-дизайн»."),
+    (("хакатон", "волга", "пгути"),
+     "«Волга.ТОП» - всероссийский хакатон для студентов ТОП ИТ в ПГУТИ. "
+     "Команда 322 участвует в нём с сайтом-портфолио."),
+)
+
 INSTRUCTION = (
     "Вопрос посетителя сайта команды 322 по теме команды. "
     "Ответь по-русски кратко, не более трёх предложений, только по существу. "
@@ -51,8 +91,11 @@ INSTRUCTION = (
 )
 
 
-def call_api(method, path, data=None, timeout=90):
+def call_api(method, path, data=None, params=None, timeout=90):
     cmd = [OPENCODE, "api", method, path]
+    if params:
+        for key, value in params.items():
+            cmd += ["--param", f"{key}={value}"]
     if data is not None:
         cmd += ["--data", json.dumps(data, ensure_ascii=False)]
     result = subprocess.run(
@@ -73,7 +116,10 @@ def call_api(method, path, data=None, timeout=90):
 
 def latest_assistant_id():
     data = call_api(
-        "get", f"/api/session/{SESSION_ID}/message?order=desc&limit=10", timeout=30
+        "get",
+        f"/api/session/{SESSION_ID}/message",
+        params={"order": "desc", "limit": "10"},
+        timeout=30,
     )
     if not isinstance(data, dict):
         return None
@@ -93,7 +139,10 @@ def ask_agent(question):
     )
     call_api("post", f"/api/experimental/session/{SESSION_ID}/wait", timeout=180)
     data = call_api(
-        "get", f"/api/session/{SESSION_ID}/message?order=desc&limit=12", timeout=30
+        "get",
+        f"/api/session/{SESSION_ID}/message",
+        params={"order": "desc", "limit": "12"},
+        timeout=30,
     )
     if isinstance(data, dict):
         for msg in data.get("data", []):
@@ -110,6 +159,14 @@ def ask_agent(question):
 
 def is_relevant(question):
     return bool(TOPIC_RE.search(question.lower()))
+
+
+def basic_answer(question):
+    lowered = question.lower()
+    for keys, answer in BASIC_ANSWERS:
+        if any(key in lowered for key in keys):
+            return answer
+    return None
 
 
 def opencode_available():
@@ -195,6 +252,10 @@ class Handler(BaseHTTPRequestHandler):
         question = str(payload.get("question", "")).strip()[:600]
         if not question:
             self._json({"answer": "Напишите вопрос."}, 400)
+            return
+        answer = basic_answer(question)
+        if answer:
+            self._json({"answer": answer, "relevant": True, "basic": True})
             return
         if not is_relevant(question):
             self._json({"answer": REFUSAL, "relevant": False})
