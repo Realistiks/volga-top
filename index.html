@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Команда 322 - портфолио</title>
-<meta name="description" content="Команда 322 на хакатоне Волга.ТОП: базовая версия сайта-портфолио на HTML, CSS и JavaScript. Капитан в центре, участники по бокам.">
+<meta name="description" content="Команда 322 на хакатоне Волга.ТОП: базовая версия сайта-портфолио на HTML, CSS и JavaScript. Все участники на равных, карточки появляются при прокрутке.">
 <meta name="theme-color" content="#0d1117">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
 <!-- Зона Андрея и Никиты: стили и цветовая гамма -->
 <link rel="stylesheet" href="css/style.css?v=2">
-<link rel="stylesheet" href="css/extra.css?v=1">
+<link rel="stylesheet" href="css/extra.css?v=2">
 <script>document.documentElement.classList.add('js');</script>
 <script src="js/config.js"></script>
 <script defer src="js/main.js"></script>
@@ -71,71 +71,60 @@
   <div class="wrap">
     <h2 class="reveal">Команда</h2>
     <p class="lead reveal d1">
-      Капитан в центре, участники появляются с боков по двое при спуске вниз.
-      Наведите на фотографию, чтобы открыть её на весь экран.
+      Все пятеро участников показаны на равных: карточки появляются попеременно
+      слева и справа при спуске вниз. Наведите на фотографию, чтобы открыть её на весь экран.
     </p>
 
-    <div class="team-stage">
-      <div class="team-line" aria-hidden="true"></div>
-
-      <article class="captain-card reveal zoom">
-        <img class="zoomable" src="assets/img/ilnur.jpg" alt="Капитан команды Ильнур Рахматуллин" width="896" height="1200" tabindex="0" role="button" aria-label="Увеличить фотографию капитана" style="object-position: center 18%">
-        <div class="captain-body">
-          <span class="role">Капитан</span>
+    <div class="team-grid">
+      <article class="member-card reveal from-left">
+        <img class="zoomable" src="assets/img/ilnur.jpg" alt="Ильнур Рахматуллин" width="896" height="1200" tabindex="0" role="button" aria-label="Увеличить фотографию Ильнура" style="object-position: center top">
+        <div class="member-text">
+          <span class="post">Капитан</span>
           <h3>Ильнур Рахматуллин</h3>
-          <p>Учится в КНИТУ на направлении ИСТ, профиль DevOps. Координирует команду, распределяет задачи, общается с организаторами и сдаёт полный комплект материалов.</p>
-          <div class="stack">
-            <span class="chip">Координация</span>
-            <span class="chip">Задачи</span>
-            <span class="chip">README</span>
-            <span class="chip">Сдача работ</span>
-          </div>
+          <p>Учится в КНИТУ на направлении ИСТ, профиль DevOps. Координирует команду, распределяет задачи и сдаёт материалы.</p>
+          <div class="stack"><span class="chip">Координация</span><span class="chip">Сдача работ</span></div>
         </div>
       </article>
 
-      <div class="team-pair">
-        <article class="member-card left reveal from-left">
-          <img class="zoomable" src="assets/img/kirill.jpg" alt="Кирилл Колесников" width="1280" height="853" tabindex="0" role="button" aria-label="Увеличить фотографию Кирилла">
-          <div class="member-text">
-            <span class="post">Программист, агентный разработчик</span>
-            <h3>Кирилл Колесников</h3>
-            <p>Учится в КНИТУ на направлении ИСТ, профиль DevOps. Пишет код сайта и мост к ИИ-агенту, собирает прототип. Портфолио: <a href="https://realistiks.github.io/portfolio/" target="_blank" rel="noopener">realistiks.github.io/portfolio</a></p>
-            <div class="stack"><span class="chip">Python</span><span class="chip">ИИ-агент</span></div>
-          </div>
-        </article>
-        <div class="pair-core" aria-hidden="true"><span>01 + 02</span></div>
-        <article class="member-card right reveal from-right">
-          <img class="zoomable" src="assets/img/andrey.jpg" alt="Андрей Иванов" width="576" height="621" tabindex="0" role="button" aria-label="Увеличить фотографию Андрея">
-          <div class="member-text">
-            <span class="post">Монтаж</span>
-            <h3>Андрей Иванов</h3>
-            <p>Учится в КНИТУ на направлении ИСТ, профиль DevOps. Собирает финальные видео: склейка, переходы, кадры и оформление демонстрации.</p>
-            <div class="stack"><span class="chip">Монтаж</span><span class="chip">Видео</span></div>
-          </div>
-        </article>
-      </div>
+      <article class="member-card reveal from-right">
+        <img class="zoomable" src="assets/img/kirill.jpg" alt="Кирилл Колесников" width="1280" height="853" tabindex="0" role="button" aria-label="Увеличить фотографию Кирилла">
+        <div class="member-text">
+          <span class="post">Программист, агентный разработчик</span>
+          <h3>Кирилл Колесников</h3>
+          <p>Учится в КНИТУ на направлении ИСТ, профиль DevOps. Пишет код сайта и мост к ИИ-агенту. Портфолио: <a href="https://realistiks.github.io/portfolio/" target="_blank" rel="noopener">realistiks.github.io/portfolio</a></p>
+          <div class="stack"><span class="chip">Python</span><span class="chip">ИИ-агент</span></div>
+        </div>
+      </article>
 
-      <div class="team-pair">
-        <article class="member-card left reveal from-left">
-          <img class="zoomable" src="assets/img/masha.jpg" alt="Мария Федорова" width="853" height="1280" tabindex="0" role="button" aria-label="Увеличить фотографию Марии">
-          <div class="member-text">
-            <span class="post">Режиссёр</span>
-            <h3>Мария Федорова</h3>
-            <p>Учится в КНИТУ на направлении ИСТ, профиль DevOps. Придумывает сценарий и ставит кадр для видеодемонстрации и визитки команды.</p>
-            <div class="stack"><span class="chip">Сценарий</span><span class="chip">Режиссура</span></div>
-          </div>
-        </article>
-        <div class="pair-core" aria-hidden="true"><span>03 + 04</span></div>
-        <article class="member-card right reveal from-right">
-          <img class="zoomable" src="assets/img/nikita.jpg" alt="Никита Роменский" width="709" height="945" tabindex="0" role="button" aria-label="Увеличить фотографию Никиты">
-          <div class="member-text">
-            <span class="post">Целостность и аудит сайта</span>
-            <h3>Никита Роменский</h3>
-            <p>Учится в КНИТУ на направлении ИСТ, профиль DevOps. Проверяет сайт на ошибки, целостность блоков и соответствие требованиям перед сдачей.</p>
-            <div class="stack"><span class="chip">Аудит</span><span class="chip">Проверки</span></div>
-          </div>
-        </article>
-      </div>
+      <article class="member-card reveal from-left">
+        <img class="zoomable" src="assets/img/andrey.jpg" alt="Андрей Иванов" width="576" height="621" tabindex="0" role="button" aria-label="Увеличить фотографию Андрея">
+        <div class="member-text">
+          <span class="post">Монтаж</span>
+          <h3>Андрей Иванов</h3>
+          <p>Учится в КНИТУ на направлении ИСТ, профиль DevOps. Собирает финальные видео: склейка, переходы и оформление демонстрации.</p>
+          <div class="stack"><span class="chip">Монтаж</span><span class="chip">Видео</span></div>
+        </div>
+      </article>
+
+      <article class="member-card reveal from-right">
+        <img class="zoomable" src="assets/img/masha.jpg" alt="Мария Федорова" width="853" height="1280" tabindex="0" role="button" aria-label="Увеличить фотографию Марии">
+        <div class="member-text">
+          <span class="post">Режиссёр</span>
+          <h3>Мария Федорова</h3>
+          <p>Учится в КНИТУ на направлении ИСТ, профиль DevOps. Придумывает сценарий и ставит кадр для демонстрации и визитки.</p>
+          <div class="stack"><span class="chip">Сценарий</span><span class="chip">Режиссура</span></div>
+        </div>
+      </article>
+
+      <article class="member-card reveal from-left team-wide">
+        <img class="zoomable" src="assets/img/nikita.jpg" alt="Никита Роменский" width="709" height="945" tabindex="0" role="button" aria-label="Увеличить фотографию Никиты">
+        <div class="member-text">
+          <span class="post">Целостность и аудит сайта</span>
+          <h3>Никита Роменский</h3>
+          <p>Учится в КНИТУ на направлении ИСТ, профиль DevOps. Проверяет сайт на ошибки и сверяет решение с требованиями перед сдачей.</p>
+          <div class="stack"><span class="chip">Аудит</span><span class="chip">Проверки</span></div>
+        </div>
+      </article>
     </div>
   </div>
 </section>

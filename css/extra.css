@@ -188,6 +188,26 @@
   letter-spacing: .02em;
 }
 
+/* Команда: все участники равны */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 34px;
+}
+.team-grid .member-card { justify-self: stretch; }
+.team-grid .member-card.left { flex-direction: row; text-align: left; }
+.team-grid .member-card.left .stack { justify-content: flex-start; }
+.team-grid .team-wide {
+  grid-column: 1 / -1;
+  width: calc(50% - 9px);
+  justify-self: center;
+}
+@media (max-width: 760px) {
+  .team-grid { grid-template-columns: 1fr; }
+  .team-grid .team-wide { width: 100%; grid-column: auto; }
+}
+
 a.chip {
   display: inline-flex;
   align-items: center;
