@@ -179,6 +179,30 @@
 }
 .chat-form button:hover { background: rgba(63,185,80,.26); }
 
+/* Лаконичный блок компьютерного зрения */
+.cv-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0 4px;
+}
+.cv-step {
+  padding: 9px 14px;
+  border-radius: 9px;
+  border: 1px solid var(--border, #30363d);
+  background: var(--card, #161b22);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text, #e6edf3);
+}
+.cv-step.accent {
+  border-color: rgba(63,185,80,.45);
+  background: rgba(63,185,80,.12);
+  color: var(--accent, #3fb950);
+}
+.cv-arrow { color: var(--muted, #8b949e); font-size: 16px; }
+
 /* Обратный отсчёт до сдачи */
 .countdown {
   margin-top: 18px;
