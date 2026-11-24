@@ -46,7 +46,7 @@ window.TEAM_ANSWERS = [
   },
   {
     match: ['репозиторий', 'github', 'gitverse', 'где код'],
-    answer: 'По правилам хакатона основной код должен лежать в российской системе контроля версий, например GitVerse. GitHub Pages используется только как публичное зеркало: https://github.com/Realistiks/volga-top.'
+    answer: 'Основной репозиторий команды в GitVerse: https://gitverse.ru/daryofarder/volga-top-322. GitHub используется только как публичное зеркало сайта.'
   },
   {
     match: ['что за чат', 'как работает чат', 'чат с агентом'],
