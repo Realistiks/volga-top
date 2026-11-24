@@ -16,7 +16,6 @@ https://gitverse.ru/daryofarder/volga-top-322. GitHub Pages использует
 | Роменский Никита | 861-ТОП862 | проверка целостности и аудит сайта | не создан | Проверка разделов, ссылок и адаптива, сверка с требованиями положения |
 
 Все участники учатся в КНИТУ на направлении ИСТ, профиль DevOps.
-Портфолио Кирилла: https://realistiks.github.io/portfolio/
 Основной репозиторий: https://gitverse.ru/daryofarder/volga-top-322
 Публичное зеркало: https://github.com/Realistiks/volga-top
 
