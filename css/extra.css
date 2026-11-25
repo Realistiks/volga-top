@@ -192,6 +192,7 @@
 header .wrap { position: relative; }
 .theme-toggle {
   position: absolute;
+  z-index: 5;
   top: 0;
   right: 24px;
   width: 42px;
