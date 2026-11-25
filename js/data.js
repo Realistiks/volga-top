@@ -33,8 +33,9 @@ window.TEAM_DATA = {
       role: 'Монтаж',
       group: '861-ТОП862',
       photo: 'assets/img/andrey.jpg',
-      width: 576,
-      height: 621,
+      width: 900,
+      height: 1200,
+      position: 'center top',
       note: 'Собирает финальные видео: склейка, переходы и оформление демонстрации.',
       skills: ['Монтаж', 'Видео']
     },
