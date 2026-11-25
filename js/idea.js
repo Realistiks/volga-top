@@ -292,7 +292,7 @@
     var role = roles[roleSelect.value];
     var task = role.tasks[taskSelect.value] || role.tasks.build;
     output.value =
-      'Ты - ' + role.name + ', участник команды 322. Твоя зона: ' + role.zone + '.\n' +
+      'Ты - ' + role.name + ', участник команды St.Code. Твоя зона: ' + role.zone + '.\n' +
       'Задача: ' + task.text + '.\n\n' +
       'Что сделать:\n' +
       task.steps.map(function (step, index) { return (index + 1) + '. ' + step; }).join('\n') + '\n\n' +
