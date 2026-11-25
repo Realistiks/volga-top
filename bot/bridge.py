@@ -18,10 +18,13 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 SITE_DIR = Path(__file__).resolve().parent.parent
-OPENCODE = os.environ.get(
-    "OPENCODE_BIN", r"C:\Users\daryo\AppData\Roaming\npm\opencode.cmd"
+DEFAULT_OPENCODE = (
+    r"C:\Users\daryo\AppData\Roaming\npm\opencode.cmd"
+    if os.name == "nt" else "opencode"
 )
+OPENCODE = os.environ.get("OPENCODE_BIN", DEFAULT_OPENCODE)
 SESSION_ID = os.environ.get("OPENCODE_SESSION_ID", "ses_df62a830fffemPd1qJVlBBk7j2")
+HOST = os.environ.get("CHAT_BRIDGE_HOST", "127.0.0.1")
 PORT = int(os.environ.get("CHAT_BRIDGE_PORT", "8765"))
 
 # Слова, по которым определяем, что вопрос действительно про команду.
@@ -302,8 +305,8 @@ if __name__ == "__main__":
         sys.stdout.reconfigure(encoding="utf-8")
     except Exception:
         pass
-    server = ThreadingHTTPServer(("127.0.0.1", PORT), Handler)
-    print(f"Сайт и чат: http://127.0.0.1:{PORT}/")
+    server = ThreadingHTTPServer((HOST, PORT), Handler)
+    print(f"Сайт и чат: http://{HOST}:{PORT}/")
     print(f"Сессия OpenCode: {SESSION_ID}")
     try:
         server.serve_forever()

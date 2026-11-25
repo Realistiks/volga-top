@@ -1,0 +1,11 @@
+services:
+  site:
+    build: .
+    ports:
+      - "8765:8765"
+    environment:
+      CHAT_BRIDGE_HOST: 0.0.0.0
+      CHAT_BRIDGE_PORT: 8765
+      OPENCODE_SESSION_ID: ${OPENCODE_SESSION_ID:-}
+      CHAT_ENDPOINT: ${CHAT_ENDPOINT:-}
+    restart: unless-stopped
