@@ -13,18 +13,6 @@
   --font-head: "Unbounded", "Manrope", system-ui, sans-serif;
 }
 
-[data-theme="light"] {
-  --bg: #ffffff;
-  --card: #f6f8fa;
-  --border: #d0d7de;
-  --text: #1f2328;
-  --muted: #59636e;
-  --accent: #1a7f37;
-  --blue: #0969da;
-  --chip: #eaeef2;
-  --nav-bg: rgba(255,255,255,.9);
-}
-
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
