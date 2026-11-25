@@ -188,6 +188,29 @@
   letter-spacing: .02em;
 }
 
+/* Логотип и девиз */
+.brand {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.brand-logo {
+  width: 52px;
+  height: 52px;
+  flex: none;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+.motto {
+  margin-top: 10px;
+  color: var(--accent);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .01em;
+}
+
 /* Переключатель темы */
 header .wrap { position: relative; }
 .theme-toggle {
@@ -229,6 +252,12 @@ header .wrap { position: relative; }
   margin-top: 34px;
 }
 .team-grid .member-card { justify-self: stretch; }
+.member-group {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 2px;
+}
 .team-grid .member-card.left { flex-direction: row; text-align: left; }
 .team-grid .member-card.left .stack { justify-content: flex-start; }
 .team-grid .team-wide {
@@ -239,6 +268,8 @@ header .wrap { position: relative; }
 @media (max-width: 760px) {
   .team-grid { grid-template-columns: 1fr; }
   .team-grid .team-wide { width: 100%; grid-column: auto; }
+  .js .reveal.from-left,
+  .js .reveal.from-right { transform: translateY(24px); }
 }
 
 a.chip {

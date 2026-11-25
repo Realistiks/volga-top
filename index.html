@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
 <!-- Зона Андрея и Никиты: стили и цветовая гамма -->
 <link rel="stylesheet" href="css/style.css?v=5">
-<link rel="stylesheet" href="css/extra.css?v=6">
+<link rel="stylesheet" href="css/extra.css?v=7">
 <script>document.documentElement.classList.add('js');</script>
 <script src="js/config.js"></script>
 <script defer src="js/main.js"></script>
@@ -30,8 +30,12 @@
         <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
       </svg>
     </button>
-    <h1 class="reveal">Команда St.Code<span class="dot">.</span></h1>
-    <div class="subtitle reveal d1">Базовая версия сайта-портфолио на HTML - хакатон ПГУТИ</div>
+    <div class="brand reveal">
+      <img class="brand-logo" src="favicon.svg" alt="Эмблема команды St.Code" width="52" height="52">
+      <h1>Команда St.Code<span class="dot">.</span></h1>
+    </div>
+    <div class="motto reveal d1">Пять человек. Один репозиторий. Общий результат.</div>
+    <div class="subtitle reveal d2">Базовая версия сайта-портфолио на HTML - хакатон ПГУТИ</div>
     <div class="tags reveal d2">
       <span class="tag">HTML5</span>
       <span class="tag">CSS3</span>
@@ -48,6 +52,8 @@
   <div class="wrap">
     <a href="#about">О проекте</a>
     <a href="#team">Команда</a>
+    <a href="#skills">Навыки</a>
+    <a href="#projects">Проекты</a>
     <a href="#roles">Роли</a>
     <a href="#idea">Идея и развитие</a>
     <a href="#prompt">Промт капитана</a>
@@ -84,56 +90,57 @@
       слева и справа при спуске вниз. Наведите на фотографию, чтобы открыть её на весь экран.
     </p>
 
-    <div class="team-grid">
-      <article class="member-card reveal from-left">
-        <img class="zoomable" src="assets/img/ilnur.jpg" alt="Ильнур Рахматуллин" width="896" height="1200" tabindex="0" role="button" aria-label="Увеличить фотографию Ильнура" style="object-position: center top">
-        <div class="member-text">
-          <span class="post">Капитан</span>
-          <h3>Ильнур Рахматуллин</h3>
-          <p>Учится в КНИТУ на направлении ИСТ, профиль DevOps. Координирует команду, распределяет задачи и сдаёт материалы.</p>
-          <div class="stack"><span class="chip">Координация</span><span class="chip">Сдача работ</span></div>
-        </div>
-      </article>
+    <div class="team-grid" id="team-grid"></div>
+    <noscript><p class="lead">Для отображения карточек участников включите JavaScript.</p></noscript>
+  </div>
+</section>
 
-      <article class="member-card reveal from-right">
-        <img class="zoomable" src="assets/img/kirill.jpg" alt="Кирилл Колесников" width="1280" height="853" tabindex="0" role="button" aria-label="Увеличить фотографию Кирилла">
-        <div class="member-text">
-          <span class="post">Программист, агентный разработчик</span>
-          <h3>Кирилл Колесников</h3>
-          <p>Учится в КНИТУ на направлении ИСТ, профиль DevOps. Пишет код сайта и мост к ИИ-агенту, собирает прототип.</p>
-          <div class="stack"><span class="chip">Python</span><span class="chip">ИИ-агент</span></div>
+<section id="skills">
+  <div class="wrap">
+    <h2 class="reveal">Навыки команды</h2>
+    <p class="lead reveal d1">Языки, технологии и инструменты, с которыми команда работала в этом проекте.</p>
+    <div class="cols">
+      <div class="reveal from-left">
+        <h3 style="font-size:17px; margin-bottom:12px;">Разработка</h3>
+        <div class="stack">
+          <span class="chip">HTML5</span><span class="chip">CSS3</span>
+          <span class="chip">JavaScript</span><span class="chip">Python 3.11</span>
+          <span class="chip">Git</span><span class="chip">Docker</span>
         </div>
-      </article>
+        <h3 style="font-size:17px; margin:22px 0 12px;">Интерфейс</h3>
+        <div class="stack">
+          <span class="chip">Адаптивная вёрстка</span><span class="chip">UX</span>
+          <span class="chip">Анимации</span><span class="chip">Доступность</span>
+          <span class="chip">Светлая и тёмная темы</span>
+        </div>
+      </div>
+      <div class="reveal from-right">
+        <h3 style="font-size:17px; margin-bottom:12px;">ИИ и инфраструктура</h3>
+        <div class="stack">
+          <span class="chip">OpenCode API</span><span class="chip">ИИ-агент</span>
+          <span class="chip">Локальный мост</span><span class="chip">cloudflared</span>
+          <span class="chip">GitHub Pages</span><span class="chip">GitVerse</span>
+        </div>
+        <h3 style="font-size:17px; margin:22px 0 12px;">Медиа и процесс</h3>
+        <div class="stack">
+          <span class="chip">Сценарий</span><span class="chip">Видеосъёмка</span>
+          <span class="chip">Монтаж</span><span class="chip">Аудит сайта</span>
+          <span class="chip">README</span><span class="chip">Командная работа</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <article class="member-card reveal from-left">
-        <img class="zoomable" src="assets/img/andrey.jpg" alt="Андрей Иванов" width="576" height="621" tabindex="0" role="button" aria-label="Увеличить фотографию Андрея">
-        <div class="member-text">
-          <span class="post">Монтаж</span>
-          <h3>Андрей Иванов</h3>
-          <p>Учится в КНИТУ на направлении ИСТ, профиль DevOps. Собирает финальные видео: склейка, переходы и оформление демонстрации.</p>
-          <div class="stack"><span class="chip">Монтаж</span><span class="chip">Видео</span></div>
-        </div>
-      </article>
-
-      <article class="member-card reveal from-right">
-        <img class="zoomable" src="assets/img/masha.jpg" alt="Мария Федорова" width="853" height="1280" tabindex="0" role="button" aria-label="Увеличить фотографию Марии">
-        <div class="member-text">
-          <span class="post">Режиссёр</span>
-          <h3>Мария Федорова</h3>
-          <p>Учится в КНИТУ на направлении ИСТ, профиль DevOps. Придумывает сценарий и ставит кадр для демонстрации и визитки.</p>
-          <div class="stack"><span class="chip">Сценарий</span><span class="chip">Режиссура</span></div>
-        </div>
-      </article>
-
-      <article class="member-card reveal from-left team-wide">
-        <img class="zoomable" src="assets/img/nikita.jpg" alt="Никита Роменский" width="709" height="945" tabindex="0" role="button" aria-label="Увеличить фотографию Никиты">
-        <div class="member-text">
-          <span class="post">Целостность и аудит сайта</span>
-          <h3>Никита Роменский</h3>
-          <p>Учится в КНИТУ на направлении ИСТ, профиль DevOps. Проверяет сайт на ошибки и сверяет решение с требованиями перед сдачей.</p>
-          <div class="stack"><span class="chip">Аудит</span><span class="chip">Проверки</span></div>
-        </div>
-      </article>
+<section id="projects">
+  <div class="wrap">
+    <h2 class="reveal">Проекты</h2>
+    <p class="lead reveal d1">Что уже сделано командой и какие направления хотим развивать дальше.</p>
+    <div class="steps">
+      <div class="step reveal d1"><div class="n">01</div><h3>Сайт-визитка St.Code</h3><p>Одностраничный сайт команды с адаптивом, темами, партиклами, чатом и конструктором промтов.</p></div>
+      <div class="step reveal d2"><div class="n">02</div><h3>Мост к ИИ-агенту</h3><p>Локальный и удалённый мост: фильтр вопросов по теме, базовые ответы без сервера, ответы агента в чате.</p></div>
+      <div class="step reveal d3"><div class="n">03</div><h3>Конструктор промтов</h3><p>Пять наборов задач под роли участников: капитан, разработчик, монтаж, режиссура и аудит.</p></div>
+      <div class="step reveal d4"><div class="n">04</div><h3>Планы развития</h3><p>База знаний команды, Telegram-бот, мультиязычный чат и журнал вопросов для разбора на защите.</p></div>
     </div>
   </div>
 </section>
@@ -183,6 +190,11 @@
     <div class="result blue reveal">
       <b>Важно:</b> код лежит в российской системе контроля версий, как требует положение хакатона.
       GitHub Pages используется только как публичное зеркало сайта.
+    </div>
+    <div class="result reveal">
+      <b>Полное раскрытие:</b> таблица по участникам, содержание запросов и проверка
+      результата находятся в README.md, архив ИИ-сессий - в файле ai-sessions.zip
+      в корне репозитория.
     </div>
   </div>
 </section>
@@ -239,6 +251,7 @@
     <p class="lead reveal d1">Регистрация команды и материалы отборочного этапа.</p>
     <div class="links reveal d2">
       <a href="https://gitverse.ru/daryofarder/volga-top-322" id="repo-link" target="_blank" rel="noopener">Основной репозиторий GitVerse <span aria-hidden="true">↗</span></a>
+      <a href="https://github.com/Realistiks/volga-top/issues" target="_blank" rel="noopener">Написать команде <span aria-hidden="true">↗</span></a>
       <a class="secondary" href="https://github.com/Realistiks/volga-top" target="_blank" rel="noopener">GitHub-зеркало <span aria-hidden="true">↗</span></a>
       <a class="secondary" href="https://olymp.psuti.ru/" target="_blank" rel="noopener">Олимпиада ПГУТИ <span aria-hidden="true">↗</span></a>
     </div>
@@ -290,6 +303,8 @@
   <div id="chat-typing">Агент печатает...</div>
 </div>
 
+<script src="js/data.js?v=1"></script>
+<script src="js/team.js?v=1"></script>
 <script src="js/theme.js?v=2" defer></script>
 <script src="js/particles.js?v=2" defer></script>
 <script src="js/answers.js?v=6" defer></script>
