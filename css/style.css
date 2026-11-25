@@ -7,8 +7,22 @@
   --muted: #8b949e;
   --accent: #3fb950;
   --blue: #58a6ff;
+  --chip: #21262d;
+  --nav-bg: rgba(13,17,23,.9);
   --font-body: "Manrope", "Segoe UI", system-ui, sans-serif;
   --font-head: "Unbounded", "Manrope", system-ui, sans-serif;
+}
+
+[data-theme="light"] {
+  --bg: #ffffff;
+  --card: #f6f8fa;
+  --border: #d0d7de;
+  --text: #1f2328;
+  --muted: #59636e;
+  --accent: #1a7f37;
+  --blue: #0969da;
+  --chip: #eaeef2;
+  --nav-bg: rgba(255,255,255,.9);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -28,7 +42,7 @@ header {
   background:
     radial-gradient(ellipse 60% 50% at 20% 0%, rgba(63,185,80,.10), transparent),
     radial-gradient(ellipse 50% 40% at 85% 10%, rgba(88,166,255,.08), transparent),
-    linear-gradient(180deg, #161b22 0%, var(--bg) 100%);
+    linear-gradient(180deg, var(--card) 0%, var(--bg) 100%);
 }
 h1 {
   font-family: var(--font-head);
@@ -46,7 +60,7 @@ h1 .dot { color: var(--accent); }
 
 nav {
   position: sticky; top: 0; z-index: 20;
-  background: rgba(13,17,23,.9); backdrop-filter: blur(12px);
+  background: var(--nav-bg); backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
 nav .wrap { display: flex; gap: 30px; padding: 15px 24px; overflow-x: auto; }
@@ -161,7 +175,7 @@ ul.feat li::before { content: "▸"; position: absolute; left: 4px; color: var(-
 .stack { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
 .chip {
   font-size: 12.5px; padding: 4px 11px; border-radius: 7px;
-  background: #21262d; border: 1px solid var(--border); color: var(--muted);
+  background: var(--chip); border: 1px solid var(--border); color: var(--muted);
   font-weight: 600; transition: color .25s, border-color .25s;
 }
 .chip:hover { color: var(--text); border-color: var(--muted); }
@@ -264,7 +278,7 @@ footer { padding: 44px 0 68px; color: var(--muted); font-size: 14px; }
   .js .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
   .lightbox { display: none !important; }
   nav { display: none; }
-  html, body { background: #0d1117 !important; }
+  html, body { background: var(--bg) !important; }
   section { padding: 30px 0; break-before: page; page-break-before: always; }
   header { break-after: page; page-break-after: always; }
   .member-card, .captain-card, .metric, .result, .step, .feat li, .stack, .chip { break-inside: avoid; }
