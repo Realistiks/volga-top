@@ -11,8 +11,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
 <!-- Зона Андрея и Никиты: стили и цветовая гамма -->
-<link rel="stylesheet" href="css/style.css?v=4">
-<link rel="stylesheet" href="css/extra.css?v=4">
+<link rel="stylesheet" href="css/style.css?v=5">
+<link rel="stylesheet" href="css/extra.css?v=5">
 <script>document.documentElement.classList.add('js');</script>
 <script src="js/config.js"></script>
 <script defer src="js/main.js"></script>
@@ -21,6 +21,15 @@
 
 <header>
   <div class="wrap">
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Включить светлую тему" aria-pressed="false" title="Светлая тема">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4"></circle>
+        <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+      </svg>
+    </button>
     <h1 class="reveal">Команда St.Code<span class="dot">.</span></h1>
     <div class="subtitle reveal d1">Базовая версия сайта-портфолио на HTML - хакатон ПГУТИ</div>
     <div class="tags reveal d2">
@@ -157,7 +166,7 @@
         <ul class="feat">
           <li>Инструменты: ассистент в OpenCode (модель Hy4 flash Free) и локальный мост для чата на сайте, промты пишет капитан</li>
           <li>Цели: поиск идей, заготовки HTML и CSS, тексты разделов, код анимаций и чата, описание решения</li>
-          <li>Созданные или изменённые элементы: каркас `index.html`, стили, скрипты анимаций, партиклов, чата, конструктора промтов и базовых ответов, мост и туннель к агенту, обратный отсчёт, карточки команды, черновики текстов</li>
+          <li>Созданные или изменённые элементы: каркас `index.html`, стили, скрипты анимаций, партиклов, чата, конструктора промтов, базовых ответов и переключателя темы, мост и туннель к агенту, обратный отсчёт, карточки команды, черновики текстов</li>
           <li>Проверка участниками: Ильнур как капитан сверил структуру и сроки; Кирилл проверил код и мост; Никита выполнил аудит целостности сайта; Маша и Андрей проверили видео перед сдачей</li>
         </ul>
       </div>
@@ -281,6 +290,7 @@
   <div id="chat-typing">Агент печатает...</div>
 </div>
 
+<script src="js/theme.js?v=2" defer></script>
 <script src="js/particles.js?v=2" defer></script>
 <script src="js/answers.js?v=6" defer></script>
 <script src="js/chat.js?v=3" defer></script>
