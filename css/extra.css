@@ -59,6 +59,12 @@
   border-bottom: 1px solid var(--border);
   background: linear-gradient(90deg, rgba(63,185,80,.12), rgba(88,166,255,.08));
 }
+.chat-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.chat-brand-logo { width: 20px; height: 20px; flex: none; }
 .chat-head strong {
   font-family: var(--font-head, sans-serif);
   font-size: 14px;

@@ -44,8 +44,9 @@ window.TEAM_DATA = {
       role: 'Режиссёр',
       group: '861-ТОП242',
       photo: 'assets/img/masha.jpg',
-      width: 853,
-      height: 1280,
+      width: 900,
+      height: 1200,
+      position: 'center top',
       note: 'Придумывает сценарий и ставит кадр для демонстрации и визитки.',
       skills: ['Сценарий', 'Режиссура']
     },
