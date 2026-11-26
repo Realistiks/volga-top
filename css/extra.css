@@ -201,26 +201,48 @@
   flex-wrap: wrap;
   gap: 16px;
 }
-.brand-logo {
-  width: 52px;
-  height: 52px;
+.brand h1 {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0;
+}
+.brand-icon {
+  width: 58px;
+  height: 58px;
   flex: none;
   border-radius: 14px;
-  border: 1px solid var(--border);
-  background: var(--card);
 }
-.brand-logo-full {
+.brand-text {
   display: block;
-  width: 320px;
-  max-width: 100%;
+  width: 220px;
+  max-width: 55vw;
   height: auto;
 }
-.chat-brand-logo-full {
+.brand-text-light { display: none; }
+[data-theme="light"] .brand-text-dark { display: none; }
+[data-theme="light"] .brand-text-light { display: block; }
+
+.chat-brand {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.chat-brand-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  flex: none;
+}
+.chat-brand-text {
   display: block;
-  width: 120px;
+  width: 92px;
   max-width: 45%;
   height: auto;
 }
+.chat-brand-text-light { display: none; }
+[data-theme="light"] .chat-brand-text-dark { display: none; }
+[data-theme="light"] .chat-brand-text-light { display: block; }
 .motto {
   margin-top: 10px;
   color: var(--accent);

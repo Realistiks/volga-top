@@ -6,13 +6,13 @@
 <title>Команда St.Code - портфолио</title>
 <meta name="description" content="Команда St.Code на хакатоне Волга.ТОП: базовая версия сайта-портфолио на HTML, CSS и JavaScript. Все участники на равных, карточки появляются при прокрутке.">
 <meta name="theme-color" content="#0d1117">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/img/streetcode-icon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
 <!-- Зона Андрея и Никиты: стили и цветовая гамма -->
 <link rel="stylesheet" href="css/style.css?v=5">
-<link rel="stylesheet" href="css/extra.css?v=9">
+<link rel="stylesheet" href="css/extra.css?v=10">
 <script>document.documentElement.classList.add('js');</script>
 <script src="js/config.js"></script>
 <script defer src="js/main.js"></script>
@@ -31,7 +31,11 @@
       </svg>
     </button>
     <div class="brand reveal">
-      <h1><img class="brand-logo-full" src="assets/img/logo.svg" alt="Команда St.Code"></h1>
+      <h1>
+        <img class="brand-icon" src="assets/img/streetcode-icon.png" alt="Иконка команды Street Code">
+        <img class="brand-text brand-text-dark" src="assets/img/streetcode-text-dark.png" alt="Street Code">
+        <img class="brand-text brand-text-light" src="assets/img/streetcode-text-light.png" alt="">
+      </h1>
     </div>
     <div class="motto reveal d1">Пять человек. Один репозиторий. Общий результат.</div>
     <div class="subtitle reveal d2">Базовая версия сайта-портфолио на HTML - хакатон ПГУТИ</div>
@@ -281,7 +285,11 @@
 <div class="chat-panel" id="chat-panel" role="dialog" aria-label="Чат с ИИ-агентом команды">
   <div class="chat-head">
     <div>
-      <div class="chat-brand"><img src="assets/img/logo.svg" alt="Команда St.Code" class="chat-brand-logo-full"><strong>Чат</strong></div>
+      <div class="chat-brand">
+        <img class="chat-brand-icon" src="assets/img/streetcode-icon.png" alt="">
+        <img class="chat-brand-text chat-brand-text-dark" src="assets/img/streetcode-text-dark.png" alt="Street Code">
+        <img class="chat-brand-text chat-brand-text-light" src="assets/img/streetcode-text-light.png" alt="">
+      </div>
       <span class="chat-status" id="chat-status"><i></i> Проверяем связь с агентом...</span>
     </div>
     <button class="chat-close" id="chat-close" type="button" aria-label="Закрыть чат">×</button>
