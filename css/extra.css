@@ -209,6 +209,18 @@
   border: 1px solid var(--border);
   background: var(--card);
 }
+.brand-logo-full {
+  display: block;
+  width: 320px;
+  max-width: 100%;
+  height: auto;
+}
+.chat-brand-logo-full {
+  display: block;
+  width: 120px;
+  max-width: 45%;
+  height: auto;
+}
 .motto {
   margin-top: 10px;
   color: var(--accent);

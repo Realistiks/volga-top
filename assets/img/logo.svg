@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 88" role="img" aria-label="Команда St.Code">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#161b22"/>
+      <stop offset="1" stop-color="#0d1117"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="358" height="86" rx="18" fill="url(#bg)" stroke="#3fb950" stroke-width="2" opacity="0.95"/>
+  <rect x="12" y="13" width="62" height="62" rx="15" fill="#0d1117" stroke="#3fb950" stroke-width="2"/>
+  <text x="43" y="58" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700" fill="#3fb950" text-anchor="middle">S</text>
+  <circle cx="67" cy="25" r="5" fill="#58a6ff"/>
+  <text x="90" y="38" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="3" fill="#8b949e">КОМАНДА</text>
+  <text x="88" y="70" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#e6edf3">St.Code</text>
+  <circle cx="318" cy="66" r="5" fill="#3fb950"/>
+</svg>
